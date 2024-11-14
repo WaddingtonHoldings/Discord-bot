@@ -20,7 +20,7 @@ client.on('interactionCreate', async (interaction) => {
             const messageId = replyMessage.id; // Get the message ID
             const channelId = interaction.channelId; // Get the channel ID
             
-            await axios.post('https://hook.us2.make.com/g94k1z6ybuog4pdtwuwf4w8wumjgkn81', {
+            await axios.post(process.env.MAKE_WEBHOOK_URL, {
                 prompt: promptText,
                 author: interaction.user.username,
                 channel: interaction.channel.name,
